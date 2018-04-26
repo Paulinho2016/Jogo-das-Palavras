@@ -5,8 +5,186 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Game"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Game" Height="768" Width="1024" MaxWidth="1024" MaxHeight="768" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="ConteinerBase">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="160"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <WrapPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" Background="LightBlue"/>
+        <WrapPanel Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="7" Background="LightBlue"/>
+        <WrapPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="7" Background="LightBlue"/>
+        <WrapPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="7" Background="LightBlue"/>        
+
+        <!--Label Titulo-->
+        <Label x:Name="lblTitulo" Content="JOGO DE PALAVRAS" Grid.Column="1" Grid.Row="0" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         
+        <!--Grid de Informações Superior-->
+        <Grid x:Name="ConteinerInfo" Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Tema-->
+            <Border x:Name="brdTema" Background="LightBlue" CornerRadius="8" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0">
+                <Label x:Name="lblTema" Content="TEMA:" FontSize="25" Width="370" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>    
+            </Border>
+
+            <!--Pontos-->
+            <Border x:Name="brdPontuacao" Background="LightBlue" CornerRadius="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0">
+                <Label x:Name="lblPontos" Content="PONTUAÇÂO:" FontSize="25" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+            </Border>
+
+            <!--Tempo-->
+            <Border x:Name="brdTempo" Background="LightBlue" CornerRadius="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0">
+                <Label x:Name="lblTempo" Content="TEMPO:" FontSize="25" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
+            </Border>
+        </Grid>
+        
+        <!--WrapPanel Campos-->
+        <Border x:Name="brdCampos" Background="LightBlue" CornerRadius="8" Grid.Row="2" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Center">
+            <WrapPanel x:Name="wrpCampos" Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!--Campo 1-->
+                <Border x:Name="b0" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra0" Content="?" FontSize="35" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+        
+                <!--Campo 2-->
+                <Border x:Name="b1" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra1" Content="?" FontSize="40" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
+                <!--Campo 3-->
+                <Border x:Name="b2" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra2" Content="?" FontSize="40" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
+                <!--Campo 4-->
+                <Border x:Name="b3" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra3" Content="?" FontSize="40" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
+                <!--Campo 5-->
+                <Border x:Name="b4" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra4" Content="?" FontSize="40" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
+                <!--Campo 6-->
+                <Border x:Name="b5" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra5" Content="?" FontSize="35" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
+                <!--Campo 7-->
+                <Border x:Name="b6" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra6" Content="?" FontSize="40" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
+                <!--Campo 8-->
+                <Border x:Name="b7" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra7" Content="?" FontSize="40" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
+                <!--Campo 9-->
+                <Border x:Name="b8" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra8" Content="?" FontSize="40" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
+                <!--Campo 10-->
+                <Border x:Name="b9" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10,10,0,10">
+                    <Label x:Name="lblLetra9" Content="?" FontSize="40" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+
+                <!--Campo 11-->
+                <Border x:Name="b10" Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="8" Margin="10">
+                    <Label x:Name="lblLetra10" Content="?" FontSize="40" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Border>
+            </WrapPanel>
+        </Border>
+
+        <Grid x:Name="ConteinerPrincipal" Grid.Column="1" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--Dicas-->
+            <WrapPanel x:Name="wrpDicas" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="top" Orientation="Vertical">
+                <Border Grid.Column="2" Background="LightBlue" CornerRadius="8" Margin="5">
+                    <Label x:Name="lblDica1" Content="1ª DICA: " FontSize="20" Width="550" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+
+                <Border Background="LightBlue" CornerRadius="8" Margin="5">
+                    <Label x:Name="lblDica2" Content="2ª DICA: " FontSize="20" Width="550" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </WrapPanel>
+            
+            <!--Stutas-->
+            <WrapPanel x:Name="wrpDisplay" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5">
+                <Border Background="LightBlue" CornerRadius="8" Width="500">
+                    <Label x:Name="lblStatus" Content="RESULTADO: " FontSize="25" Margin="5"/>
+                </Border>
+            </WrapPanel>             
+            
+            <!--Tentativas-->
+            <WrapPanel x:Name="wrpTentativas" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Vertical">
+                <Label Content="TENTATIVAS" Margin="0,20,0,0"/>
+                <Border Grid.Column="2" Background="LightBlue" CornerRadius="8">                    
+                    <Label x:Name="lblTentativas" Content="0" FontSize="36" Width="75" Height="75" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Border>
+            </WrapPanel>
+        </Grid>
+        
+        <!--WrapPanel Teclado-->
+        <Border x:Name="brdTeclado" Background="LightBlue" CornerRadius="8" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10">
+            <WrapPanel x:Name="wrpTeclado" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="720">
+                <Button x:Name="btnA" Content="A" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnB" Content="B" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnC" Content="C" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnD" Content="D" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnE" Content="E" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnF" Content="F" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnG" Content="G" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnH" Content="H" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnI" Content="I" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnJ" Content="J" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnK" Content="K" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnL" Content="L" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnM" Content="M" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnN" Content="N" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnO" Content="O" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnP" Content="P" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnQ" Content="Q" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnR" Content="R" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnS" Content="S" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnT" Content="T" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnU" Content="U" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnV" Content="V" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnW" Content="W" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnX" Content="X" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnY" Content="Y" Width="50" Height="50" Margin="5,5,0,5"/>
+                <Button x:Name="btnZ" Content="z" Width="50" Height="50" Margin="5,5,0,5"/>
+            </WrapPanel>
+        </Border>
+        
+        <!--WrapPanel Botões-->
+        <WrapPanel x:Name="wrpBotoes" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
+            <Button x:Name="btnEncerrar" Content="ENCERRAR" FontSize="16" Width="120" Height="70" Margin="10"/>
+            <Button x:Name="btnPausar" Content="PAUSAR" FontSize="16" Width="120" Height="70" Margin="10"/>
+            <Button x:Name="btnIniciar" Content="INICIAR" FontSize="16" Width="120" Height="70" Margin="10"/>
+        </WrapPanel>
     </Grid>
 </Window>
